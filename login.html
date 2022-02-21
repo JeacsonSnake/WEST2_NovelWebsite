@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册界面</title>
+    <link rel="stylesheet" href="Register.css">
+    <link href="./font-awesome/css/all.css" rel="stylesheet">
+    <!-- <script defer src="font-awesome/js/all.js"></script>也可以用 -->
+    <script src="checkRegister.js"></script>
+</head>
+<body>
+
+    <div class="mainpage">
+
+        <div class="formpage">
+
+            <div class="title">登录</div>
+
+            <div class="Rform">
+                <form action="#" id="form" method="post">
+                    <table class="form-table">
+
+                        <!--邮箱-->
+                        <tr>
+
+                            <td class="td-left">
+                                <label for="email">Email</label>
+                            </td>
+
+                            <td class="td-right">
+                                <input type="email" name="email" id="email" placeholder="请输入邮箱">
+                                <span id="s-email" class="error"></span>
+                            </td>
+
+                        </tr>
+
+                        <!--密码-->
+                        <tr>
+
+                            <td class="td-left">
+                                <label for="password">密码</label>
+                            </td>
+
+                            <td class="td-right">
+                                <input type="password" name="password" id="password" placeholder="请输入密码">
+                                <span id="s-password" class="error"></span>
+                            </td>
+
+                        </tr>
+                        
+                        <!-- 提交 -->
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" id="btn-sub" value="登录">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+            <div class="ifR">
+                <p>还没账号？<a href="register.html">立即注册</a></p>
+            </div>
+
+        </div>
+
+        <footer>
+            Jeacson_Snake All rights reserved © 2022
+        </footer>
+
+    </div>
+    
+</body>
+</html>
