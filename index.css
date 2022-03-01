@@ -1,0 +1,296 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+}
+
+/* 
+body {
+    justify-content: center;
+} */
+
+
+a {
+    text-decoration: none;
+    color: rgba(230, 210, 210, 0.884);
+}
+
+
+.AllBlock {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.headNav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(194, 82, 82);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.e1 {
+    width: 150px;
+    position: absolute;
+    left: 96px;
+    top: 13px;
+}
+
+.e2 {
+    width: 700px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 97px;
+}
+
+.e3 {
+    width: 240px;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 0;
+}
+
+ .smallSearchbar {
+    position: absolute;
+    left: 0;
+}
+
+ .smallSearchbar form {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .smallSearchbar input {
+    width: 300px;
+    height: 32px;
+    border-radius: 42px;
+    border: 2px solid #324B4E;
+    background: #F9F0DA;
+    transition: .3s linear;
+    float: right;
+    text-align: center;
+ }
+ .smallSearchbar input:focus {
+    width: 300px;
+ }
+ .smallSearchbar button {
+    position: absolute;
+    background: none;
+    width: 32px;
+    height: 36px;
+    top: 6px;
+    right: 5px;
+    cursor: pointer;
+    border: none;
+ }
+ .smallSearchbar button:before{
+   content: "\f002";
+   font-family: FontAwesome;
+   color: #324b4e;
+ }
+
+
+
+.mainBlock {
+    
+    width: 95vw;
+    height: 100vh;
+    background-color: #7BA7AB;
+}
+
+.headblock {
+    height: 120px;
+    width: inherit;
+    background-color: #F9F0DA;
+    display: flex;
+    justify-content: space-between;
+}
+
+.webImage {
+    width: 40%;
+    height: 70px;
+}
+
+
+.sec {
+    width: 700px;
+    background-color: #fafcfc;
+    display: flex;
+    justify-content: center;
+}
+/*搜索框*/
+/* #7BA7AB */
+
+.mainSearchbar {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.mainSearchbar input {
+    height: 60px;
+    width: 500px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    background: #F9F0DA;
+    color: #9E9C9C;
+    padding-left: 15px;
+}
+
+.mainSearchbar button {
+    position: absolute;
+    width: 50px;
+    height: 64px;
+    background: none;
+    border-radius: 0 5px 5px 0;
+    border: 2px solid #7BA7AB;
+    top: 28px;
+    right: 91px;
+    cursor: pointer;
+}
+
+.mainSearchbar button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #48da1c;
+}
+
+.homeArea {
+    display: flex;
+    flex-direction: row;
+}
+
+.contentBlock {
+    height: calc(100vh - 120px);
+    width: 100%;
+    background-color: #9E9C9C;
+}
+
+.k1 {
+    height: 630px;
+    margin-bottom: 34px;
+}
+
+.novelBlock {
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.eachNovel {
+    width: 480px;
+    display: flex;
+    margin-top: 34px;
+    margin-left: 74.29px;
+    justify-content: space-around;
+    background-color: #fafcfc;
+    display: flex;
+}
+
+
+.novelImg {
+    width: 135px;
+    height: 176px;
+    background-color: #55d2e0;
+}
+
+.novelImg img {
+    width: 100%;
+}
+
+.novelCont {
+    width: 50%;
+}
+
+.k2 {
+    width: 100%;
+    height: 724px;
+    background-color: aliceblue;
+}
+
+.ratingTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.ratingNum {
+    width: 10%;
+    font-size: larger;
+    text-decoration: wavy;
+    float: left;
+}
+
+.ratingBlock {
+    width: 30%;
+    
+}
+
+.rating1 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.ratingNovelTitle {
+    font-weight: 600;
+    font-size: large;
+}
+
+.ratingImg {
+    width: 100px;
+    height: 150px;
+    background-color: #9E9C9C;
+}
+
+.ratingImg img {
+    width: 100%;
+}
+
+.ratingCont1 {
+    width: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.r1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ratingAnother {
+    margin-bottom: 20px;
+}
+
+.rating2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ratingCont2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ratingTag {
+    color: rgb(73, 145, 145);
+    border: #468c94 2px solid;
+    border-radius: 2px;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zz小说网--首页</title>
+    <link
+      href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.common.dev.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="AllBlock">
+      <header class="headNav">
+        <div class="e1">
+          <span>zz小说网</span>
+        </div>
+
+        <div class="e2">
+          <div class="smallSearchbar" style="display: none">
+            <form>
+              <input type="text" placeholder="请输入您要搜索的内容..." />
+              <button type="submit"></button>
+            </form>
+          </div>
+          <div class="e3">
+            <span>
+              <a href="register.html">注册</a>
+            </span>
+            <span>
+              <a href="login.html">登录</a>
+            </span>
+            <span>
+              <a href="https://www.bilibili.com/video/av80433022">充值</a>
+            </span>
+          </div>
+        </div>
+      </header>
+      <div class="mainBlock">
+        <div class="headblock">
+          <div class="webImage"></div>
+          <div class="disContent"></div>
+          <div class="sec">
+            <!-- 搜索框 -->
+            <div class="mainSearchbar">
+              <form>
+                <input type="text" placeholder="请输入您要搜索的内容..." />
+                <button type="submit"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="homeArea">
+          <div class="contentBlock">
+            <div class="k1">
+              <div class="novelBlock">
+                <div class="eachNovel">
+                  <div class="novelImg">
+                    <img :src="novelImg" alt="" />
+                  </div>
+                  <div class="novelCont">
+                    <div class="novelName">
+                      <span>{{name}}</span>
+                    </div>
+                    <div class="novelTag">
+                      <span>{{tag}}</span>
+                    </div>
+                    <div class="brief">
+                      <p>{{brief}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="novelBlock">
+                <div class="eachNovel">
+                  <div class="novelImg">
+                    <img :src="novelImg" alt="" />
+                  </div>
+                  <div class="novelCont">
+                    <div class="novelName">
+                      <span>{{name}}</span>
+                    </div>
+                    <div class="novelTag">
+                      <span>{{tag}}</span>
+                    </div>
+                    <div class="brief">
+                      <p>{{brief}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="novelBlock">
+                <div class="eachNovel">
+                  <div class="novelImg">
+                    <img :src="novelImg" alt="" />
+                  </div>
+                  <div class="novelCont">
+                    <div class="novelName">
+                      <span>{{name}}</span>
+                    </div>
+                    <div class="novelTag">
+                      <span>{{tag}}</span>
+                    </div>
+                    <div class="brief">
+                      <p>{{brief}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="novelBlock">
+                <div class="eachNovel">
+                  <div class="novelImg">
+                    <img :src="novelImg" alt="" />
+                  </div>
+                  <div class="novelCont">
+                    <div class="novelName">
+                      <span>{{name}}</span>
+                    </div>
+                    <div class="novelTag">
+                      <span>{{tag}}</span>
+                    </div>
+                    <div class="brief">
+                      <p>{{brief}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="novelBlock">
+                <div class="eachNovel">
+                  <div class="novelImg">
+                    <img :src="novelImg" alt="" />
+                  </div>
+                  <div class="novelCont">
+                    <div class="novelName">
+                      <span>{{name}}</span>
+                    </div>
+                    <div class="novelTag">
+                      <span>{{tag}}</span>
+                    </div>
+                    <div class="brief">
+                      <p>{{brief}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="novelBlock">
+                <div class="eachNovel">
+                  <div class="novelImg">
+                    <img :src="novelImg" alt="" />
+                  </div>
+                  <div class="novelCont">
+                    <div class="novelName">
+                      <span>{{name}}</span>
+                    </div>
+                    <div class="novelTag">
+                      <span>{{tag}}</span>
+                    </div>
+                    <div class="brief">
+                      <p>{{brief}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="ratingBlock">
+            <div class="ratingTitle"><span>今日排行榜</span></div>
+            <div class="rating1">
+              <div class="ratingNum">1</div>
+              <div class="ratingImg"><img :src="FirstNovelImg" alt="" /></div>
+              <div class="ratingCont1">
+                <div class="ratingNovelTitle"><a href="">{{FirstNovelName}}</a></div>
+                <div class="r1">
+                  <div class="ratingWriter">toma</div>
+                  <div class="ratingTag">wonder</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ratingAnother">
+              <span class="ratingNum">2</span>
+              <span class="ratingCont2">
+                <span class="ratingNovelTitle"><a href="">a sorty story</a></span>
+                <span class="ratingTag">wonder</span>
+              </span>
+            </div>
+            
+            <div class="ratingAnother">
+              <span class="ratingNum">3</span>
+              <span class="ratingCont2">
+                <span class="ratingNovelTitle"><a href="">a sorty story</a></span>
+                <span class="ratingTag">wonder</span>
+              </span>
+            </div>
+            
+            <div class="ratingAnother">
+              <span class="ratingNum">4</span>
+              <span class="ratingCont2">
+                <span class="ratingNovelTitle"><a href="">a sorty story</a></span>
+                <span class="ratingTag">wonder</span>
+              </span>
+            </div>
+            
+            <div class="ratingAnother">
+              <span class="ratingNum">5</span>
+              <span class="ratingCont2">
+                <span class="ratingNovelTitle"><a href="">a sorty story</a></span>
+                <span class="ratingTag">wonder</span>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <footer class="footNav">
+        <span>Jeacson_Edger ©2022</span>
+      </footer>
+    </div>
+  </body>
+  <script>
+    Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示
+
+    new Vue({
+      el: ".contentBlock",
+      data: {
+        name: "WOnder almighty",
+        tag: "奇幻",
+        novelImg: "/picture/vuetest.jpg",
+        brief:
+          "孩子们的未来、圣剑的声音、强大的尽头、最重要的誓言、最亲爱的朋友、最宝贵的约定！串通所有的情感，故事将会永远传承下去！",
+      },
+      methods: {
+        showInfo(event) {
+          console.log(event.target);
+        },
+      },
+      computed: {},
+      watch: {},
+    });
+
+    new Vue({
+      el: ".ratingBlock",
+      data: {
+        FirstNovelName: "WOnder almighty",
+        FirstTag: "奇幻",
+        FirstNovelImg: "/picture/vuetest.jpg",
+        brief:
+          "孩子们的未来、圣剑的声音、强大的尽头、最重要的誓言、最亲爱的朋友、最宝贵的约定！串通所有的情感，故事将会永远传承下去！",
+      },
+      methods: {
+        showInfo(event) {
+          console.log(event.target);
+        },
+      },
+      computed: {},
+      watch: {},
+    });
+  </script>
+</html>
