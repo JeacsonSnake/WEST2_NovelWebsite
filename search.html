@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zz小说网--首页</title>
+    <title>zz小说网--搜索</title>
     <link
       href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.common.dev.js"></script>
-    <link rel="stylesheet" href="index.css" />
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <link rel="stylesheet" href="search.css" />
   </head>
   <body>
     <div class="AllBlock">
@@ -21,7 +29,7 @@
         </div>
 
         <div class="e2">
-          <div class="smallSearchbar" style="display: none">
+          <div class="smallSearchbar">
             <form>
               <input type="text" placeholder="请输入您要搜索的内容..." />
               <button type="submit"></button>
@@ -41,17 +49,6 @@
         </div>
       </header>
       <div class="mainBlock">
-        <div class="headblock">
-          <div class="sec">
-            <!-- 搜索框 -->
-            <div class="mainSearchbar">
-              <form>
-                <input type="text" placeholder="请输入您要搜索的内容..." />
-                <button type="submit"></button>
-              </form>
-            </div>
-          </div>
-        </div>
         <div class="homeArea">
           <div class="contentBlock">
             <div class="k1">
@@ -128,7 +125,16 @@
                 </div>
               </div>
             </div>
+
+            <div class="block">
+                <el-pagination
+                  layout="prev, pager, next"
+                  :total="50">
+                </el-pagination>
+              </div>
           </div>
+
+
           <div class="ratingBlock">
             <div class="ratingTitle"><span>今日排行榜</span></div>
             <div class="rating1">
@@ -193,7 +199,6 @@
     </div>
   </body>
   <script>
-    
     Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示
 
     new Vue({
@@ -220,7 +225,8 @@
         RankData: [],
         firstRankData: {},
         FirstTag: "奇幻",
-        FirstNovelImg: "http://v4934114w1.wocp.fun/picture/"+ "开天录" +".jpg",
+        FirstNovelImg:
+          "http://v4934114w1.wocp.fun/picture/" + "开天录" + ".jpg",
         brief: "asdgasdgasdg阿桑的歌前文过去微软asdg",
       },
       methods: {
@@ -237,22 +243,21 @@
         },
         FirstNovelTag() {
           return this.firstRankData.novelTag;
-        }
-
+        },
       },
       watch: {},
-      mounted() { 
-        axios.get('http://v4934114w1.wocp.fun/novel/queryRank')
-        .then(res => {
-          this.RankData = res.data;
-          this.firstRankData = this.RankData[0];
-          console.log(this.firstRankData);
-        })
-        .catch(err => {
-          console.error(err);
-        })
+      mounted() {
+        axios
+          .get("http://v4934114w1.wocp.fun/novel/queryRank")
+          .then((res) => {
+            this.RankData = res.data;
+            this.firstRankData = this.RankData[0];
+            console.log(this.firstRankData);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       },
     });
-  
   </script>
 </html>

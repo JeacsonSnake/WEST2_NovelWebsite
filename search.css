@@ -103,80 +103,19 @@ a {
 .mainBlock {
     
     width: 95vw;
-    height: 88vh;
+    height: 200vh;
     background-color: #9dbdf9;
 }
 
-.headblock {
-    height: 120px;
-    width: inherit;
-    background-color: #dfe4ea;
-    display: flex;
-    justify-content: center;
-}
-
-.webImage {
-    width: 40%;
-    height: 70px;
-}
-
-
-.sec {
-    width: 700px;
-    display: flex;
-    justify-content: center;
-
-}
-/*搜索框*/
-/* #7BA7AB */
-
-.mainSearchbar {
-    width: inherit;
-    height: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-
-
-.mainSearchbar input {
-    height: 60px;
-    width: 500px;
-    border: 2px solid #70a1ff;
-    border-radius: 5px;
-    background: #F9F0DA;
-    color: #9E9C9C;
-    padding-left: 15px;
-}
-
-.mainSearchbar button {
-    position: absolute;
-    width: 50px;
-    height: 64px;
-    background: none;
-    border-radius: 0 5px 5px 0;
-    border: 2px solid #70a1ff;
-    top: 28px;
-    right: 90px;
-    cursor: pointer;
-}
-
-.mainSearchbar button:before {
-    content: "\f002";
-    font-family: FontAwesome;
-    font-size: 16px;
-    color: #b99821;
-}
 
 .homeArea {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 .contentBlock {
-    height: calc(88vh - 120px);
+    height: inherit;
     width: 100%;
     background-color: #eccc68;
 }
