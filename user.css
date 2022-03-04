@@ -1,0 +1,217 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+}
+
+
+body {
+    background-color: #ced8e6a1;
+}
+
+
+a {
+    text-decoration: none;
+    color: rgba(230, 210, 210, 0.884);
+}
+
+
+.AllBlock {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.headNav {
+    width: 100%;
+    height: 50px;
+    background-color: #70a1ff;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.e1 {
+    width: 150px;
+    position: absolute;
+    left: 96px;
+    top: 13px;
+}
+
+.e2 {
+    width: 700px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 97px;
+}
+
+.e3 {
+    width: 240px;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 0;
+}
+
+ .smallSearchbar {
+    position: absolute;
+    left: 0;
+}
+
+ .smallSearchbar form {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .smallSearchbar input {
+    width: 300px;
+    height: 32px;
+    border-radius: 42px;
+    border: 2px solid #324B4E;
+    background: #F9F0DA;
+    transition: .3s linear;
+    float: right;
+    text-align: center;
+ }
+ .smallSearchbar input:focus {
+    width: 300px;
+ }
+ .smallSearchbar button {
+    position: absolute;
+    background: none;
+    width: 32px;
+    height: 36px;
+    top: 6px;
+    right: 5px;
+    cursor: pointer;
+    border: none;
+ }
+ .smallSearchbar button:before{
+   content: "\f002";
+   font-family: FontAwesome;
+   color: #324b4e;
+ }
+
+
+
+.mainBlock {
+    
+    width: 95vw;
+    height: 200vh;
+    background-color: #9dbdf9;
+}
+
+
+.homeArea {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.userBlock {
+    height: inherit;
+    width: 30%;
+    background-color: #eccc68;
+}
+
+.user {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userHead {
+    width: 30%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    border: #70a1ff 2px solid;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userHead img {
+    width: 100%;
+    height: 100%;
+}
+
+.upload {
+    width: 250px;
+    height: 150px;
+    margin-top: 30px;
+}
+
+#uploadBtn {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: #70a1ff 3px solid;
+    border-radius: 30px;
+    background-color: #a4beee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+}
+
+.userFavor {
+    width: 70%;
+}
+
+.favorTitle {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.novelBlock {
+    width: 505px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.eachNovel {
+    width: 480px;
+    height: 190px;
+    display: flex;
+    margin-top: 32px;
+    margin-left: 17.73px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f3f2b3d0;
+}
+
+
+.novelImg {
+    width: 135px;
+    height: 176px;
+    display: flex;
+    background-color: #c1e444c2;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.novelImg img {
+    width: 100%;
+}
+
+.novelImg ::after {
+    filter: blur(20px);
+}
+
+.novelCont {
+    width: 50%;
+    height: 92%;
+}
+
+
+.footnav {
+    position: absolute;
+    bottom: 10px;
+    right: 607px;
+}

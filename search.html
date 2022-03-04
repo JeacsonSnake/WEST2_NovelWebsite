@@ -226,7 +226,7 @@
         firstRankData: {},
         FirstTag: "奇幻",
         FirstNovelImg:
-          "http://v4934114w1.wocp.fun/picture/" + "开天录" + ".jpg",
+          "picture/vuetest.jpg",
         brief: "asdgasdgasdg阿桑的歌前文过去微软asdg",
       },
       methods: {
@@ -247,16 +247,16 @@
       },
       watch: {},
       mounted() {
-        axios
-          .get("http://v4934114w1.wocp.fun/novel/queryRank")
-          .then((res) => {
-            this.RankData = res.data;
-            this.firstRankData = this.RankData[0];
-            console.log(this.firstRankData);
-          })
-          .catch((err) => {
-            console.error(err);
-          });
+        // axios
+        //   .get("http://v4934114w1.wocp.fun/novel/queryRank")
+        //   .then((res) => {
+        //     this.RankData = res.data;
+        //     this.firstRankData = this.RankData[0];
+        //     console.log(this.firstRankData);
+        //   })
+        //   .catch((err) => {
+        //     console.error(err);
+        //   });
       },
     });
   </script>
