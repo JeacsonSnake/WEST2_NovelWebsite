@@ -133,8 +133,6 @@
                 </el-pagination>
               </div>
           </div>
-
-
           <div class="ratingBlock">
             <div class="ratingTitle"><span>今日排行榜</span></div>
             <div class="rating1">
@@ -151,44 +149,28 @@
               </div>
             </div>
 
-            <div class="ratingAnother">
-              <span class="ratingNum">2</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
-            </div>
-
-            <div class="ratingAnother">
-              <span class="ratingNum">3</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
-            </div>
-
-            <div class="ratingAnother">
-              <span class="ratingNum">4</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
-            </div>
-
-            <div class="ratingAnother">
-              <span class="ratingNum">5</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
+            <div v-for="(Rank, index) in RankData" :key="index">
+              <template v-if="index < 4">
+                <div class="ratingAnother">
+                  <span class="ratingNum">{{index + 2}}</span>
+                  <span class="ratingCont2">
+                    <template v-for="(item, key, ind) in Rank">
+                      <template
+                        v-if="key === 'novelName' || key === 'novelTag'"
+                      >
+                        <template v-if="key === 'novelName'">
+                          <span class="ratingNovelTitle">
+                            <a href="">{{item}}</a>
+                          </span>
+                        </template>
+                        <template v-if="key === 'novelTag'">
+                          <span class="ratingTag anotherTag">{{item}}</span>
+                        </template>
+                      </template>
+                    </template>
+                  </span>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -224,10 +206,6 @@
       data: {
         RankData: [],
         firstRankData: {},
-        FirstTag: "奇幻",
-        FirstNovelImg:
-          "picture/vuetest.jpg",
-        brief: "asdgasdgasdg阿桑的歌前文过去微软asdg",
       },
       methods: {
         showInfo(event) {
@@ -244,20 +222,26 @@
         FirstNovelTag() {
           return this.firstRankData.novelTag;
         },
+        FirstNovelImg() {
+          // return  "http://v4934114w1.wocp.fun/picture/"+ this.FirstNovelName +".jpg";
+          return this.firstRankData.pictureURL;
+        },
       },
       watch: {},
       mounted() {
-        // axios
-        //   .get("http://v4934114w1.wocp.fun/novel/queryRank")
-        //   .then((res) => {
-        //     this.RankData = res.data;
-        //     this.firstRankData = this.RankData[0];
-        //     console.log(this.firstRankData);
-        //   })
-        //   .catch((err) => {
-        //     console.error(err);
-        //   });
+        axios
+          .get("http://v4934114w1.wocp.fun/novel/queryRank")
+          .then((res) => {
+            this.RankData = res.data;
+            this.firstRankData = this.RankData.shift();
+            console.log(this.firstRankData);
+            console.log(this.RankData);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       },
     });
+  
   </script>
 </html>

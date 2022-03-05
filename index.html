@@ -27,12 +27,20 @@
               <button type="submit"></button>
             </form>
           </div>
-          <div class="e3">
+          <div class="e3" style="display: none">
             <span>
               <a href="register.html">注册</a>
             </span>
             <span>
               <a href="login.html">登录</a>
+            </span>
+            <span>
+              <a href="https://www.bilibili.com/video/av80433022">充值</a>
+            </span>
+          </div>
+          <div class="e4">
+            <span>
+              <a href="user.html">asdgas</a>
             </span>
             <span>
               <a href="https://www.bilibili.com/video/av80433022">充值</a>
@@ -55,78 +63,40 @@
         <div class="homeArea">
           <div class="contentBlock">
             <div class="k1">
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
+              <template v-for="(reco, index) in recoData">
+                <template v-if="index < 4">
+                  <div class="novelBlock">
+                    <div class="eachNovel">
+                      <template v-for="(item, key, ind) in reco">
+                        <template v-if="key === 'pictureURL'">
+                          <div class="novelImg">
+                            <img :src="item" alt="" />
+                          </div>
+                        </template>
+                      </template>
+                      <div class="novelCont">
+                      <template v-for="(item, key, ind) in reco">
+                          <template v-if="key === 'novelName'">
+                            <div class="novelName">
+                              <span>{{item}}</span>
+                            </div>
+                          </template>
+                          <template v-if="key === 'novelTag'">
+                            <div class="novelTag">
+                              <span>{{item}}</span>
+                            </div>
+                          </template>
+                          <template v-if="key === 'brief'">
+                            <div class="brief">
+                              <p>{{item}}</p>
+                            </div>
+                          </template>
+                        </template>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </template>
+              </template>
             </div>
           </div>
           <div class="ratingBlock">
@@ -136,7 +106,7 @@
               <div class="ratingImg"><img :src="FirstNovelImg" alt="" /></div>
               <div class="ratingCont1">
                 <div class="ratingNovelTitle">
-                  <a href="">{{FirstNovelName}}</a>
+                  <a :href="'/novelPage.html?novelID=' + FirstnovelID">{{FirstNovelName}}</a>
                 </div>
                 <div class="r1">
                   <div class="ratingWriter">{{FirstNovelWriter}}</div>
@@ -145,44 +115,28 @@
               </div>
             </div>
 
-            <div class="ratingAnother">
-              <span class="ratingNum">2</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
-            </div>
-
-            <div class="ratingAnother">
-              <span class="ratingNum">3</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
-            </div>
-
-            <div class="ratingAnother">
-              <span class="ratingNum">4</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
-            </div>
-
-            <div class="ratingAnother">
-              <span class="ratingNum">5</span>
-              <span class="ratingCont2">
-                <span class="ratingNovelTitle"
-                  ><a href="">a sorty story</a></span
-                >
-                <span class="ratingTag">wonder</span>
-              </span>
+            <div v-for="(Rank, index) in RankData" :key="index">
+              <template v-if="index < 4">
+                <div class="ratingAnother">
+                  <span class="ratingNum">{{index + 2}}</span>
+                  <span class="ratingCont2">
+                    <template v-for="(item, key, ind) in Rank">
+                      <template
+                        v-if="key === 'novelName' || key === 'novelTag'"
+                      >
+                        <template v-if="key === 'novelName'">
+                          <span class="ratingNovelTitle">
+                            <a href="">{{item}}</a>
+                          </span>
+                        </template>
+                        <template v-if="key === 'novelTag'">
+                          <span class="ratingTag anotherTag">{{item}}</span>
+                        </template>
+                      </template>
+                    </template>
+                  </span>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -193,17 +147,12 @@
     </div>
   </body>
   <script>
-    
     Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示
 
-    new Vue({
+    let vm = new Vue({
       el: ".contentBlock",
       data: {
-        name: "WOnder almighty",
-        tag: "奇幻",
-        novelImg: "picture/vuetest.jpg",
-        brief:
-          "孩子们的未来、圣剑的声音、强大的尽头、最重要的誓言、最亲爱的朋友、最宝贵的约定！串通所有的情感，故事将会永远传承下去！",
+        recoData: [],
       },
       methods: {
         showInfo(event) {
@@ -212,6 +161,17 @@
       },
       computed: {},
       watch: {},
+      mounted() {
+        axios
+          .get("http://v4934114w1.wocp.fun/novel/recommendedNovel")
+          .then((res) => {
+            this.recoData = res.data;
+            console.log("recomm", this.recoData);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      },
     });
 
     new Vue({
@@ -219,9 +179,6 @@
       data: {
         RankData: [],
         firstRankData: {},
-        FirstTag: "奇幻",
-        FirstNovelImg: "http://v4934114w1.wocp.fun/picture/"+ "开天录" +".jpg",
-        brief: "asdgasdgasdg阿桑的歌前文过去微软asdg",
       },
       methods: {
         showInfo(event) {
@@ -237,22 +194,29 @@
         },
         FirstNovelTag() {
           return this.firstRankData.novelTag;
+        },
+        FirstNovelImg() {
+          // return  "http://v4934114w1.wocp.fun/picture/"+ this.FirstNovelName +".jpg";
+          return this.firstRankData.pictureURL;
+        },
+        FirstnovelID() {
+          return this.firstRankData.novelID;
         }
-
       },
       watch: {},
-      mounted() { 
-        axios.get('http://v4934114w1.wocp.fun/novel/queryRank')
-        .then(res => {
-          this.RankData = res.data;
-          this.firstRankData = this.RankData[0];
-          console.log(this.firstRankData);
-        })
-        .catch(err => {
-          console.error(err);
-        })
+      mounted() {
+        axios
+          .get("http://v4934114w1.wocp.fun/novel/queryRank")
+          .then((res) => {
+            this.RankData = res.data;
+            this.firstRankData = this.RankData.shift();
+            console.log(this.firstRankData);
+            console.log(this.RankData);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       },
     });
-  
   </script>
 </html>

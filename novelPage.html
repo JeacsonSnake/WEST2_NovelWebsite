@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zz小说网--小说界面</title>
+    <link
+      href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.common.dev.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.5.3/vue-router.common.js"></script> -->
+
+    <link rel="stylesheet" href="novelPage.css" />
+  </head>
+  <body>
+    <div class="AllBlock">
+      <header class="headNav">
+        <div class="e1">
+          <span><a href="index.html">zz小说网</a></span>
+        </div>
+
+        <div class="e2">
+          <div class="smallSearchbar">
+            <form>
+              <input type="text" placeholder="请输入您要搜索的内容..." />
+              <button type="submit"></button>
+            </form>
+          </div>
+          <div class="e3">
+            <span>
+              <a href="register.html">注册</a>
+            </span>
+            <span>
+              <a href="login.html">登录</a>
+            </span>
+            <span>
+              <a href="https://www.bilibili.com/video/av80433022">充值</a>
+            </span>
+          </div>
+        </div>
+      </header>
+      <div class="mainBlock">
+        <div class="homeArea">
+          <div class="novelArea">
+              <div class="novelImg">
+                  <img :src="novelImg" alt="">
+              </div>
+              <div class="novelInfo">
+                <div class="book-info">
+                    <div class="book-name"><span>{{novelName}}</span></div>
+                    <div class="novelTag"><span>{{novelTag}}</span></div>
+                    <div class="favorNum"><span>总收藏量</span> <span>{{collect}}</span></div>
+                    <div class="book-dec Jbook-dec hide">
+                        <p>{{novelBrief}}</p>
+                    </div>
+                    <div class="btn-group">
+
+                        <button class="download">
+                            <a class="btn read-btn">小说下载</a>
+                        </button>
+                        <button class="addFavor">
+                            <div class="add">加入收藏</div>
+                        </button>
+                        
+
+                    </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      <footer class="footNav">
+        <span>Jeacson_Edger All rights reserved © 2022</span>
+      </footer>
+    </div>
+  </body>
+  <script>
+    Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示
+    // let id = this.$route.query.username;
+    // console.log(`id`, id);
+    let Nid = location.search.split('=').pop();
+    console.log(`location.search`, Nid);
+    new Vue({
+      el: ".mainBlock",
+      data: {
+        novelName: "WOnder almighty",
+        novelTag: "奇幻",
+        novelImg: "picture/vuetest.jpg",
+        novelBrief:
+          "孩子们的未来、圣剑的声音、强大的尽头、最重要的誓言、最亲爱的朋友、最宝贵的约定！串通所有的情感，故事将会永远传承下去！",
+      },
+      methods: {
+        showInfo(event) {
+          console.log(event.target);
+        },
+      },
+      computed: {},
+      watch: {},
+    });
+  </script>
+</html>
