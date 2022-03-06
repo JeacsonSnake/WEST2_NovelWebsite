@@ -103,7 +103,7 @@ a {
 .mainBlock {
     
     width: 95vw;
-    height: 200vh;
+    height: 90vh;
     background-color: #9dbdf9;
 }
 
@@ -112,33 +112,19 @@ a {
     display: flex;
     flex-direction: row;
     height: 100%;
-}
-
-.userBlock {
-    height: inherit;
-    width: 30%;
     background-color: #eccc68;
-}
-
-.user {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.userHead {
-    width: 30%;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    border: #70a1ff 2px solid;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.userHead img {
-    width: 100%;
-    height: 100%;
+.novelArea {
+    display: flex;
+    background-color: #f1d98f;
+    width: 95%;
+    height: 90%;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
 }
 
 .upload {
@@ -158,14 +144,7 @@ a {
     font-size: 50px;
 }
 
-.userFavor {
-    width: 70%;
-}
 
-.favorTitle {
-    font-size: x-large;
-    font-weight: 700;
-}
 
 .novelBlock {
     width: 505px;
@@ -174,26 +153,17 @@ a {
     float: left;
 }
 
-.eachNovel {
-    width: 480px;
-    height: 190px;
-    display: flex;
-    margin-top: 32px;
-    margin-left: 17.73px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f3f2b3d0;
-}
 
 
 .novelImg {
-    width: 135px;
-    height: 176px;
+    width: 282px;
+    height: 376px;
     display: flex;
     background-color: #c1e444c2;
     align-items: center;
     justify-content: center;
-
+    border: 4px solid #e9e8e1;
+    border-radius: 5px;
 }
 
 .novelImg img {
@@ -204,11 +174,59 @@ a {
     filter: blur(20px);
 }
 
-.novelCont {
+.novelInfo {
     width: 50%;
-    height: 92%;
+    height: 85%;
+    background-color: #c4d2ec;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+.book-name {
+    font-size: xx-large;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.book-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 150px
+}
+
+.novelTag {
+    color: rgb(73, 145, 145);
+    border: #468c94 2px solid;
+    border-radius: 2px;
+}
+
+.favorNum {
+    margin-left: 20px;
+}
+
+.novelBrief {
+    width: 80%;
+    height: 20%;
+    border: #f0de78 2px solid;
+    border-radius: 6px;
+}
+
+.novelBrief p {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 120px;
+    height: 80px;
+    background-color: #e9e8e1;
+    border: 4px solid #f1d98f;
+    border-radius: 15px;
+    color: #70a1ff;
+}
 
 .footnav {
     position: absolute;

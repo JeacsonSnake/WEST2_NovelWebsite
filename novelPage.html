@@ -11,7 +11,6 @@
     />
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.common.dev.js"></script>
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.5.3/vue-router.common.js"></script> -->
 
     <link rel="stylesheet" href="novelPage.css" />
   </head>
@@ -45,32 +44,34 @@
       <div class="mainBlock">
         <div class="homeArea">
           <div class="novelArea">
-              <div class="novelImg">
-                  <img :src="novelImg" alt="">
-              </div>
-              <div class="novelInfo">
-                <div class="book-info">
-                    <div class="book-name"><span>{{novelName}}</span></div>
-                    <div class="novelTag"><span>{{novelTag}}</span></div>
-                    <div class="favorNum"><span>总收藏量</span> <span>{{collect}}</span></div>
-                    <div class="book-dec Jbook-dec hide">
-                        <p>{{novelBrief}}</p>
-                    </div>
-                    <div class="btn-group">
+            <div class="novelImg">
+              <img :src="novelImg" alt="" />
+            </div>
+            <div class="novelInfo">
+              <div class="book-name"><span>{{novelName}}</span></div>
+              <div class="book-info">
+                <div class="novelWriter"><span>作者： </span><span>{{novelWriter}}</span></div>
+                <div><span>标签： </span><span  class="novelTag">{{novelTag}}</span></div>
 
-                        <button class="download">
-                            <a class="btn read-btn">小说下载</a>
-                        </button>
-                        <button class="addFavor">
-                            <div class="add">加入收藏</div>
-                        </button>
-                        
-
-                    </div>
+                <div class="favorNum">
+                  <span>总收藏量: </span>{{novelCollection}}<span></span>
                 </div>
               </div>
+              <div class="novelBrief">
+                <span>小说简介：</span>
+                <br>
+                <p>{{novelBrief}}</p>
+              </div>
+              <div class="btn-group">
+                <button class="btn">
+                  <a class="" :href="'http://v4934114w1.wocp.fun/novel/downloadNovel?name=' + novelName" style="color: #70a1ff;">小说下载</a>
+                </button>
+                <button class="addFavor">
+                  <button class="btn" style="color: #70a1ff;">加入收藏</button>
+                </button>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
       <footer class="footNav">
@@ -82,24 +83,53 @@
     Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示
     // let id = this.$route.query.username;
     // console.log(`id`, id);
-    let Nid = location.search.split('=').pop();
-    console.log(`location.search`, Nid);
-    new Vue({
+    let vm = new Vue({
       el: ".mainBlock",
       data: {
-        novelName: "WOnder almighty",
-        novelTag: "奇幻",
-        novelImg: "picture/vuetest.jpg",
-        novelBrief:
-          "孩子们的未来、圣剑的声音、强大的尽头、最重要的誓言、最亲爱的朋友、最宝贵的约定！串通所有的情感，故事将会永远传承下去！",
+        novelData:{}
       },
       methods: {
         showInfo(event) {
           console.log(event.target);
         },
       },
-      computed: {},
+      computed: {
+        novelName() {
+          return this.novelData.novelName;
+        },
+        novelTag() {
+          return this.novelData.novelTag;
+        },
+        novelImg() {
+          return this.novelData.pictureURL;
+        },
+        novelBrief() {
+          return this.novelData.brief;
+        },
+        novelCollection() {
+          return this.novelData.collection;
+        },
+        novelWriter () {
+          return this.novelData.writerName;
+        }
+      },
       watch: {},
+      mounted() {
+        axios
+          .get("http://v4934114w1.wocp.fun/novel/queryNovelID", {
+            params: {
+              novelID: 4,
+            },
+          })
+          .then((res) => {
+            console.log(res.data[0]);
+            this.novelData = res.data[0];
+            console.log(`this.novelData`, this.novelData);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      },
     });
   </script>
 </html>

@@ -46,6 +46,7 @@
               <a href="https://www.bilibili.com/video/av80433022">充值</a>
             </span>
           </div>
+          
         </div>
       </header>
       <div class="mainBlock">
@@ -70,68 +71,10 @@
                   </div>
                 </div>
               </div>
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="novelBlock">
-                <div class="eachNovel">
-                  <div class="novelImg">
-                    <img :src="novelImg" alt="" />
-                  </div>
-                  <div class="novelCont">
-                    <div class="novelName">
-                      <span>{{name}}</span>
-                    </div>
-                    <div class="novelTag">
-                      <span>{{tag}}</span>
-                    </div>
-                    <div class="brief">
-                      <p>{{brief}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
 
-            <div class="block">
-                <el-pagination
-                  layout="prev, pager, next"
-                  :total="50">
-                </el-pagination>
-              </div>
+            
           </div>
           <div class="ratingBlock">
             <div class="ratingTitle"><span>今日排行榜</span></div>
@@ -186,11 +129,10 @@
     new Vue({
       el: ".contentBlock",
       data: {
-        name: "WOnder almighty",
-        tag: "奇幻",
-        novelImg: "picture/vuetest.jpg",
-        brief:
-          "孩子们的未来、圣剑的声音、强大的尽头、最重要的誓言、最亲爱的朋友、最宝贵的约定！串通所有的情感，故事将会永远传承下去！",
+        name: "开天录",
+        tag: '玄幻',
+        novelImg: "http://v4934114w1.wocp.fun/picture/开天录.jpg",
+        brief:'生存，很容易。生活，很艰难。我族，要的不是卑下的生存，而是昂首、高傲的生活。我族，誓不为奴！',
       },
       methods: {
         showInfo(event) {
@@ -225,6 +167,9 @@
         FirstNovelImg() {
           // return  "http://v4934114w1.wocp.fun/picture/"+ this.FirstNovelName +".jpg";
           return this.firstRankData.pictureURL;
+        },
+        FirstNovelbrief() {
+          return this.firstRankData.brief;
         },
       },
       watch: {},
