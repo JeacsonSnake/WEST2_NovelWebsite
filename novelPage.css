@@ -50,7 +50,7 @@ a {
     right: 97px;
 }
 
-.e3 {
+.e3, .e4 {
     width: 240px;
     display: flex;
     justify-content: space-evenly;
